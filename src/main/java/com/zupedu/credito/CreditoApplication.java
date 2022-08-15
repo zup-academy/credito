@@ -1,4 +1,4 @@
-package com.zupedu.conta;
+package com.zupedu.credito;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CreditoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(com.zupedu.conta.CreditoApplication.class, args);
+		SpringApplication.run(com.zupedu.credito.CreditoApplication.class, args);
 	}
 
 }

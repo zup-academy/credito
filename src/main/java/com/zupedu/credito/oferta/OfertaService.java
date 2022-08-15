@@ -24,6 +24,6 @@ public class OfertaService {
             oferta = new Oferta(Tipo.CARTAO, agencia, numero, saldo);
         }
 
-        ofertaRepository.save(oferta);
+        if(oferta != null ){ofertaRepository.save(oferta);}
     }
 }
