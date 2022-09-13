@@ -1,10 +1,13 @@
 package com.zupedu.credito.oferta;
 
+import com.zupedu.conta.conta.NovaContaEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
 
 @Component
 public class NovaContaListener {
@@ -19,7 +22,9 @@ public class NovaContaListener {
 
         logger.info("Evento NOVA_CONTA consumido com sucesso {} ", event.toString());
 
+        BigDecimal saldo = (BigDecimal) event.getSaldo();
+
         ofertaService.incluirNovaOferta(
-                event.getAgencia(), event.getNumero(), event.getSaldo());
+                event.getAgencia(), event.getNumero(), saldo);
     }
 }
